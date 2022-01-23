@@ -1,10 +1,22 @@
 const express = require('express');
 const app = express()
 
-app.search('view-engine', 'ejs')
+app.set('view-engine', 'ejs')
 
-app.post('/', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index.ejs')
 })
+
+app.get('/login', (req, res) => {
+    res.render('login.ejs')
+
+})
+
+app.get('/register', (req, res) =>{
+    res.render('register.ejs')
+})
+
+
+
 
 app.listen(4000)
